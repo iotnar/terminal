@@ -27,7 +27,7 @@ with open('text.txt') as f :
     text = f.readlines()
 
 tts.setProperty('voice', 'ru')
-tts.setProperty('rate', 100)
+tts.setProperty('rate', 130)
 
 
 
@@ -54,14 +54,15 @@ k = 0
 def nadpis_text(x, y, i,  messeg):
     i = 0
     while i < int(len(messeg)):
-        text1 = f.render(str(messeg1), False, (49, 168, 77))
+        text1 = f.render(str(messeg1), False, (77, 157, 75))
         screen.blit(text1, (10, y))
         pg.display.update()
         klik.play(0, 0, 0).set_volume(0.05)
-        text = f.render(str(messeg[i]), True, (49, 168, 77))
+        #play_text_line(messeg[i])
+        text = f.render(str(messeg[i]), True, (77, 157, 75))
         screen.blit(text, (150 + x, y))
         pg.display.update()
-        pg.time.wait(120)
+        pg.time.wait(60)
         i += 1
         x += 13
 
@@ -79,6 +80,7 @@ while True:
     messeg1 = "18F000__//:"
     messeg = text[0]
     f = pg.font.Font('ConsolaMono.ttf', 18)
+
     for k in range(j):
         print(i , x )
         messeg = text[k]
@@ -88,20 +90,3 @@ while True:
         # tts.runAndWait()
 
         pg.time.wait(300)
-   # priv1.play(0, 0, 0)
-    #play_text_line(messeg)
-    #nadpis_text(10, i, x, messeg)
-    #tts.runAndWait()
-    #pg.time.wait(300)
-   # messeg = text[1]
-    #priv2.play(0, 0, 0)
-    #nadpis_text(30, i, x, messeg)
-    #tts.runAndWait()
-    #pg.time.wait(300)
-    #messeg = text[2]
-    #priv3.play(0, 0, 0)
-    #nadpis_text(50, i, x, messeg)
-    #pg.time.wait(300)
-    #messeg = text[3]
-    # priv3.play(0, 0, 0)
-    #nadpis_text(70, i, x, messeg)
